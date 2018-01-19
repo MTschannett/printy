@@ -1,3 +1,14 @@
+
+# Printy 🖨
+
+Small typescript library that should help you printing PDF Files, HTMLElements, JSON and so on..
+
+This library is inspired by https://github.com/crabbly/print.js
+
+
+
+
+TODO: Delete ts library starter text
 # ts-library-starter
 [![NPM version](https://img.shields.io/npm/v/ts-library-starter.svg)](https://www.npmjs.com/package/ts-library-starter)
 [![Build Status](https://travis-ci.org/DxCx/ts-library-starter.svg?branch=master)](https://travis-ci.org/DxCx/ts-library-starter)

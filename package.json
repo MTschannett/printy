@@ -1,7 +1,7 @@
 {
   "name": "ts-library-starter",
-  "version": "0.1.0",
-  "description": "Example git project that is used for typescript libraries as a starter pack",
+  "version": "0.0.0",
+  "description": "Easy typescript compatible library that helps you printing PDFs, HtmlElements and even JSON",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "jam": {
@@ -24,26 +24,19 @@
     "url": "git+https://github.com/DxCx/ts-library-starter.git"
   },
   "keywords": [
-    "example",
     "typescript",
     "library",
-    "starter",
-    "webpack",
-    "browserify",
-    "dts-bundle",
-    "package",
-    "tslint",
-    "jest",
-    "tsloader",
-    "boilerplate",
-    "ts-loader"
+    "print",
+    "PDF",
+    "HTML",
+    "printing"
   ],
-  "author": "Hagai Cohen",
+  "author": "Marco Tschannett",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DxCx/ts-library-starter/issues"
+    "url": "https://github.com/MTschannett/printy/issues"
   },
-  "homepage": "https://github.com/DxCx/ts-library-starter#readme",
+  "homepage": "https://github.com/MTschannett/printy",
   "devDependencies": {
     "@types/jest": "^20.0.7",
     "@types/node": "^8.0.24",

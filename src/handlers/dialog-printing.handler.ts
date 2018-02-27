@@ -1,16 +1,24 @@
+import {FileReaderUtil} from '../util/file-reader.util';
+import {PrintingInternalHandler} from './internal-print-handler.abstract';
+import {Printable} from './printing.interface';
 
-export class ChromePrintingHandler extends PrintingInternalHandler {
+export class DialogPrintingHandler extends PrintingInternalHandler {
     private currentPrintingFrame: HTMLIFrameElement;
 
     constructor() {
         super();
     }
 
-    print(printable) {
+    public print(printable: Printable) {
         this.preparePrinting(printable);
     }
 
-    preparePrinting(printable) {
+    protected executePrinting(): void {
+        this.currentPrintingFrame.contentWindow.focus();
+        this.currentPrintingFrame.contentWindow.print();
+    }
+
+    protected preparePrinting(printable) {
         this.currentPrintingFrame = this.createIframe();
 
         if (typeof printable === 'string') {
@@ -18,7 +26,7 @@ export class ChromePrintingHandler extends PrintingInternalHandler {
             this.currentPrintingFrame.onload = () => this.executePrinting();
         } else if (printable instanceof HTMLElement) {
             this.currentPrintingFrame.contentDocument.body.appendChild(
-                printable
+                printable,
             );
             this.executePrinting();
         } else if (printable instanceof File) {
@@ -29,27 +37,9 @@ export class ChromePrintingHandler extends PrintingInternalHandler {
                 this.executePrinting();
             };
 
-            FileReaderHelper.readFile(printable).then((res) => {
+            FileReaderUtil.readFile(printable).then((res) => {
                 img.src = res;
             });
         }
-    }
-
-    executePrinting(): void {
-        this.currentPrintingFrame.contentWindow.focus();
-        this.currentPrintingFrame.contentWindow.print();
-    }
-}
-
-export class FileReaderHelper {
-    static readFile(file: Blob): Promise<string> {
-        return new Promise((res, rej) => {
-            const reader = new FileReader();
-
-            reader.onload = res;
-            reader.onerror = rej;
-
-            reader.readAsDataURL(file);
-        }).then((ev: Event) => (ev.target as FileReader).result);
     }
 }

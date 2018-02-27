@@ -1,5 +1,5 @@
 export abstract class PrintingHanlderInterface {
-    abstract print(printable: string | HTMLElement | File): void;
+    public abstract print(printable: Printable): void;
 
     /**
      * Creates a document and attaches it to the DOM
@@ -17,8 +17,4 @@ export abstract class PrintingHanlderInterface {
     }
 }
 
-export abstract class PrintingInternalHandler extends PrintingHanlderInterface {
-    abstract preparePrinting(printable: string | HTMLElement | File);
-
-    abstract executePrinting(): void;
-}
+export type Printable = string | HTMLElement | File;

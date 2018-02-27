@@ -1,6 +1,6 @@
 {
   "name": "printy",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Small, dependency free Printing library for the web.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

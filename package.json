@@ -1,7 +1,7 @@
 {
-    "name": "ts-library-starter",
-    "version": "0.0.0",
-    "description": "Easy typescript compatible library that helps you printing PDFs, HtmlElements and even JSON",
+    "name": "printy",
+    "version": "0.1.0",
+    "description": "Small, dependency free Printing library for the web.",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "jam": {
@@ -29,7 +29,8 @@
         "print",
         "PDF",
         "HTML",
-        "printing"
+        "printing",
+        "image",
     ],
     "author": "Marco Tschannett",
     "license": "MIT",

@@ -27,16 +27,17 @@
         "typescript",
         "library",
         "print",
-        "pdf",
+        "PDF",
+        "HTML",
+        "printing",
         "image",
-        "html"
     ],
     "author": "Marco Tschannett",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/MTschannett/printy"
+        "url": "https://github.com/MTschannett/printy/issues"
     },
-    "homepage": "https://github.com/MTschannett/printy#readme",
+    "homepage": "https://github.com/MTschannett/printy",
     "devDependencies": {
         "@types/jest": "^20.0.7",
         "@types/node": "^8.0.24",

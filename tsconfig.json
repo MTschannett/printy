@@ -1,26 +1,35 @@
 {
-  "compilerOptions": {
-    "experimentalDecorators": true,
-    "lib": ["es6"],
-    "module": "commonjs",
-    "target": "es5",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "sourceMap": false,
-    "declaration": true,
-    "outDir": "dist",
-    "removeComments": false,
-    "typeRoots": [
-      "node_modules/@types"
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "lib": [
+            "es2016",
+            "dom"
+        ],
+        "module": "commonjs",
+        "target": "es5",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "sourceMap": false,
+        "declaration": true,
+        "outDir": "dist",
+        "removeComments": false,
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "types": [
+            "@types/node"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@printy/*": [
+                "src/*"
+            ]
+        }
+    },
+    "files": [
+        "src/index.ts"
     ],
-    "types": [
-      "@types/node"
+    "exclude": [
+        "node_modules"
     ]
-  },
-  "files": [
-    "src/index.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
 }

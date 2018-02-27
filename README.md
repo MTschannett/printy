@@ -5,60 +5,42 @@ Small typescript library that should help you printing PDF Files, HTMLElements, 
 
 This library is inspired by https://github.com/crabbly/print.js
 
+## Usage
 
+To use Printy. 
 
+Simply install it from npm.
 
-TODO: Delete ts library starter text
-# ts-library-starter
-[![NPM version](https://img.shields.io/npm/v/ts-library-starter.svg)](https://www.npmjs.com/package/ts-library-starter)
-[![Build Status](https://travis-ci.org/DxCx/ts-library-starter.svg?branch=master)](https://travis-ci.org/DxCx/ts-library-starter)
-[![Coverage Status](https://coveralls.io/repos/github/DxCx/ts-library-starter/badge.svg?branch=master)](https://coveralls.io/github/DxCx/ts-library-starter?branch=master)
-[![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg)](https://github.com/conventional-changelog/standard-version)
+After that you can use it like this:
 
-Example git project that is used for typescript libraries as a starter pack
+```
+    const printy = new Printy(); // Creates a new Printy Instance.
+```
+After this we have a three options to use printy.
 
-What does it include:
-----
-    1. exported class as example for an npm moudle
-    2. packaging for npm modules (webpack + tslint + awesome-typescript-loader + dts-bundle)
-    3. testings for npm modules (jest)
-    4. code coverage (jest) when running tests
-    5. Typescript => ES5
-    6. Two versions embed in the package, one for node, one for browser (browserify)
+Following inputs can be made:
+- string: This represents a url. Everything that can be displayed by a iframe can be inserted here.
+- HTMLElement: A element that should be printed.
+- file: A file that was uploaded (e.g. via `<input type="file">`. At the moment only images are supported)
 
-Notes
-----
-Please note that you will need to rename the library name in some files:
+```
+    // Printing a url.
+    printy.print('http://link-to-a-printable.pdf/document.pdf') 
+    
+    // Printing a element.
+    const element = document.querySelector("#printable-element")
+    printy.print(element)
+    
+    // Printing a file
+    const file = document.getElementById('input').files[0];
+    printy.print(file)
+```
 
-    1. webpack.config.js (bundle_opts)
-    2. package.json (ofcourse ;))
-Also don't forget to reset package version ;)
+Printy will choose to either trigger a printing dialog (currently only in chrome) or a new tab (all other browsers)
 
-Useful commands:
-----
-    npm run prebuild       - install NPM dependancies
-    npm run build          - build the library files
-    npm run test           - run the tests
-    npm run test:watch     - run the tests (watch-mode)
-    npm run coverage       - run the tests with coverage
-    npm run coverage:watch - run the tests with coverage (watch-mode)
-    npm run pack           - build the library, make sure the tests passes, and then pack the library (creates .tgz)
-    npm run release        - prepare package for next release
+## Todos
 
-Files explained:
-----
-    1. src - directory is used for typescript code that is part of the project
-        1a. src/Example.ts - Just an example exported library, used to should import in tests.
-        1b. src/Example.spec.ts - tests for the example class
-        1c. src/index.ts        - index, which functionality is exported from the library
-    3. package.json                 - file is used to describe the library
-    4. tsconfig.json                - configuration file for the library compilation
-    6. tslint.json                  - configuration file for the linter (both test and library)
-    8. webpack.config.js            - configuration file of the compilation automation process for the library
+- Add tests
+- Try to print all files not only images
+- Add more documentation and comments in code
 
-Output files explained:
-----
-    1. node_modules                       - directory npm creates with all the dependencies of the module (result of npm install)
-    2. dist                               - directory contains the compiled library (javascript + typings)
-    3. <module_name>-<module_version>.tgz - final tgz file for publish. (result of npm run pack)
-    4. coverage                           - code coverage report output made by istanbul
